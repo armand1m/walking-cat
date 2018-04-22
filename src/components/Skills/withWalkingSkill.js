@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as WalkingStates from "../States/walking";
 
-const getNextState = currentState => {
+const getNextState = (currentState, WalkingStates) => {
   switch (currentState) {
     case WalkingStates.NORMAL:
       return WalkingStates.WALKING_1;
@@ -15,7 +14,7 @@ const getNextState = currentState => {
   }
 };
 
-const withWalkingSkill = WrappedComponent =>
+const withWalkingSkill = (WrappedComponent, WalkingStates) =>
   class extends React.PureComponent {
     static get displayName() {
       return `withWalkingSkill(${WrappedComponent.displayName})`;
@@ -44,17 +43,15 @@ const withWalkingSkill = WrappedComponent =>
     }
 
     tick() {
-      const { isWalking } = this.props;
-
-      switch (isWalking) {
+      switch (this.props.isWalking) {
         case true:
           return this.setState(({ currentState }) => ({
-            currentState: getNextState(currentState)
+            currentState: getNextState(currentState, WalkingStates)
           }));
 
         default:
           return this.setState({
-            currentState: WalkingStates.NORMAL
+            currentState: getNextState(null, WalkingStates)
           });
       }
     }
@@ -66,15 +63,16 @@ const withWalkingSkill = WrappedComponent =>
     }
 
     componentWillUnmount() {
-      if (this.interval) {
-        clearInterval(this.interval);
-      }
+      clearInterval(this.interval);
     }
 
     render() {
-      const { currentState } = this.state;
-
-      return <WrappedComponent state={currentState} />;
+      return (
+        <WrappedComponent
+          state={this.state.currentState}
+          states={WalkingStates}
+        />
+      );
     }
   };
 

@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-
-const Button = props => <button {...props} className="btn btn-primary" />;
+import Button from "../Button";
 
 const withWalkingControl = WrappedComponent =>
   class extends React.Component {
@@ -15,16 +14,13 @@ const withWalkingControl = WrappedComponent =>
         isWalking: false
       };
 
-      this.walk = this.walk.bind(this);
-      this.stop = this.stop.bind(this);
+      this.toggle = this.toggle.bind(this);
     }
 
-    walk() {
-      this.setState({ isWalking: true });
-    }
-
-    stop() {
-      this.setState({ isWalking: false });
+    toggle() {
+      this.setState(prevState => ({
+        isWalking: !prevState.isWalking
+      }));
     }
 
     render() {
@@ -33,9 +29,8 @@ const withWalkingControl = WrappedComponent =>
       return (
         <Fragment>
           <WrappedComponent isWalking={isWalking} />
-          <div class="btn-group" role="group">
-            <Button onClick={this.walk}>Walk</Button>
-            <Button onClick={this.stop}>Stop</Button>
+          <div className="btn-group">
+            <Button onClick={this.toggle}>Toggle</Button>
           </div>
         </Fragment>
       );
