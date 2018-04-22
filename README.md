@@ -22,4 +22,5 @@ Open http://localhost:3000 now.
 
 ## Contributors
 
- - Armando Magalhaes.
+ - Armando Magalhaes. (Code)
+ - Guilherme Alves. (Pixel Art)
