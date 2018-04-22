@@ -1,2 +1,0 @@
-# WalkingCat
-Created with CodeSandbox
