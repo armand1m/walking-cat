@@ -1,0 +1,27 @@
+.Fish {
+  margin-left: 300px;
+  margin-bottom: 5px;
+  display: block;
+  box-shadow: 130px 110px 0 #e2c5b9, 100px 120px 0 #9e9e9e,
+    110px 120px 0 #dee6e8, 130px 120px 0 #9e9e9e, 140px 120px 0 #e2c5b9,
+    150px 120px 0 #e2c5b9, 90px 130px 0 #9e9e9e, 100px 130px 0 #9e9e9e,
+    110px 130px 0 #9e9e9e, 120px 130px 0 #dee6e8, 130px 130px 0 #9e9e9e,
+    140px 130px 0 #dee6e8, 150px 130px 0 #9e9e9e, 160px 130px 0 #dee6e8,
+    170px 130px 0 #9e9e9e, 180px 130px 0 #dee6e8, 190px 130px 0 #9e9e9e,
+    230px 130px 0 #e2c5b9, 80px 140px 0 #9e9e9e, 90px 140px 0 #9e9e9e,
+    100px 140px 0 #000000, 110px 140px 0 #dee6e8, 120px 140px 0 #9e9e9e,
+    130px 140px 0 #dee6e8, 140px 140px 0 #9e9e9e, 150px 140px 0 #dee6e8,
+    160px 140px 0 #9e9e9e, 170px 140px 0 #dee6e8, 180px 140px 0 #9e9e9e,
+    190px 140px 0 #dee6e8, 200px 140px 0 #9e9e9e, 210px 140px 0 #dee6e8,
+    220px 140px 0 #9e9e9e, 230px 140px 0 #dee6e8, 240px 140px 0 #e2c5b9,
+    90px 150px 0 #9e9e9e, 100px 150px 0 #dee6e8, 110px 150px 0 #9e9e9e,
+    120px 150px 0 #dee6e8, 130px 150px 0 #9e9e9e, 140px 150px 0 #dee6e8,
+    150px 150px 0 #9e9e9e, 160px 150px 0 #dee6e8, 170px 150px 0 #9e9e9e,
+    180px 150px 0 #dee6e8, 190px 150px 0 #9e9e9e, 200px 150px 0 #dee6e8,
+    210px 150px 0 #9e9e9e, 220px 150px 0 #dee6e8, 230px 150px 0 #9e9e9e,
+    240px 150px 0 #e2c5b9, 110px 160px 0 #dee6e8, 120px 160px 0 #9e9e9e,
+    130px 160px 0 #dee6e8, 140px 160px 0 #9e9e9e, 150px 160px 0 #dee6e8,
+    160px 160px 0 #9e9e9e, 230px 160px 0 #e2c5b9;
+  height: 10px;
+  width: 10px;
+}
