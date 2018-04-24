@@ -1,0 +1,6 @@
+.Scenario {
+  height: 100vh;
+  position: relative;
+  background-image: url(https://uploads.codesandbox.io/uploads/user/aaa129ff-020a-410d-b0ee-46809d7afc81/l_NH-shstagewaterfall084slow1.gif);
+  background-size: cover;
+}

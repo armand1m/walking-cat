@@ -1,48 +1,36 @@
 import React from "react";
 import { render } from "react-dom";
-import { compose } from "recompose";
 import { Provider } from "unistore/react";
 
 import CatStore from "./stores/CatStore";
 import Cat from "./components/Cat";
+import Scenario from "./components/Scenario";
 import Box from "./components/Box";
+import Floor from "./components/Floor";
 import Fish from "./components/Fish";
-import withWalkingControl from "./controls/withWalkingControl";
-import withJumpingControl from "./controls/withJumpingControl";
-import withLickingControl from "./controls/withLickingControl";
-
-const withControls = compose(
-  withWalkingControl,
-  withJumpingControl,
-  withLickingControl
-);
+import withControls from "./controls/withControls";
 
 const ControllableCat = withControls(Cat);
 
 const App = () => (
-  <div>
+  <Scenario>
     <ControllableCat />
-    <div
-      style={{
-        marginTop: "-34px"
-      }}
-    >
+    <Floor>
       <Fish />
-      <div>
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-      </div>
-    </div>
-  </div>
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+      <Box />
+    </Floor>
+  </Scenario>
 );
 
 render(

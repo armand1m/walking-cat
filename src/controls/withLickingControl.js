@@ -9,13 +9,12 @@ const withLickingControl = WrappedComponent => {
   const LickingControl = ({ state, lick, stop, ...props }) => {
     const isLicking = state === CatStates.LICKING;
     const onClick = isLicking ? stop : lick;
-
     const description = isLicking ? "Stop Licking" : "Start Licking";
 
     return (
       <Fragment>
-        <WrappedComponent {...props} />
         <Button onClick={onClick}>{description}</Button>
+        <WrappedComponent {...props} />
       </Fragment>
     );
   };

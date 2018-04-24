@@ -6,6 +6,10 @@ export default store => ({
   stop: () => ({ state: CatStates.NORMAL }),
   jump(prevState) {
     store.setState({ state: CatStates.JUMPING });
-    setTimeout(() => store.setState(prevState), 1000);
+    setTimeout(() => {
+      const wasJumping = prevState.state === CatStates.JUMPING;
+      const newState = wasJumping ? { state: CatStates.NORMAL } : prevState;
+      store.setState(newState);
+    }, 1000);
   }
 });

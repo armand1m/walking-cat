@@ -9,13 +9,12 @@ const withWalkingControl = WrappedComponent => {
   const WalkingControl = ({ state, walk, stop, ...props }) => {
     const isNormal = state === CatStates.NORMAL;
     const onClick = isNormal ? walk : stop;
-
     const description = isNormal ? "Walk" : "Stop";
 
     return (
       <Fragment>
-        <WrappedComponent {...props} />
         <Button onClick={onClick}>{description}</Button>
+        <WrappedComponent {...props} />
       </Fragment>
     );
   };

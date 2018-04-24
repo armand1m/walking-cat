@@ -1,22 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import * as CatStates from "../../states/CatStates";
 import { connect } from "unistore/react";
+import * as CatStates from "../../states/CatStates";
 
 import "./index.css";
+import "./normal.css";
 import "./walking.css";
-import "./jumping.css";
 import "./licking.css";
+import "./jumping.css";
 
 const Cat = ({ state }) => (
   <div
     className={cn({
       Cat: true,
-      [`Cat__state--${CatStates.NORMAL}`]: state === CatStates.NORMAL,
-      [`Cat__state--${CatStates.WALKING}`]: state === CatStates.WALKING,
-      [`Cat__state--${CatStates.LICKING}`]: state === CatStates.LICKING,
-      [`Cat__state--${CatStates.JUMPING}`]: state === CatStates.JUMPING
+      "Cat--normal": state === CatStates.NORMAL,
+      "Cat--walking": state === CatStates.WALKING,
+      "Cat--licking": state === CatStates.LICKING,
+      "Cat--jumping": state === CatStates.JUMPING
     })}
   />
 );
@@ -27,6 +28,4 @@ Cat.propTypes = {
   state: PropTypes.string.isRequired
 };
 
-const EnhancedCat = connect("state")(Cat);
-
-export default EnhancedCat;
+export default connect("state")(Cat);

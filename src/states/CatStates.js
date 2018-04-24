@@ -1,4 +1,4 @@
-export const NORMAL = "normal";
-export const WALKING = "walking";
-export const JUMPING = "jumping";
-export const LICKING = "licking";
+export const NORMAL = "@CAT/NORMAL";
+export const WALKING = "@CAT/WALKING";
+export const JUMPING = "@CAT/JUMPING";
+export const LICKING = "@CAT/LICKING";

@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
+import { connect } from "unistore/react";
+
 import Button from "../components/Button";
 import actions from "../actions/CatActions";
-import { connect } from "unistore/react";
 
 const withJumpingControl = WrappedComponent => {
   const JumpingControl = ({ jump, ...props }) => (
     <Fragment>
-      <WrappedComponent {...props} />
       <Button onClick={jump}>Jump</Button>
+      <WrappedComponent {...props} />
     </Fragment>
   );
 

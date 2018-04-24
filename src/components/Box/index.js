@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Box = () => <div className="Box" />;
+const Box = props => <div {...props} className="Box" />;
 
 Box.displayName = "Box";
 
