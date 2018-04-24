@@ -1,20 +1,30 @@
 import React from "react";
 import { render } from "react-dom";
-import { Provider } from "unistore/react";
+import { Provider, connect } from "unistore/react";
+import { compose } from "recompose";
 
 import CatStore from "./stores/CatStore";
-import Cat from "./components/Cat";
-import Scenario from "./components/Scenario";
-import Box from "./components/Box";
-import Floor from "./components/Floor";
-import Fish from "./components/Fish";
+import CatActions from "./actions/CatActions";
 import withControls from "./controls/withControls";
 
-const ControllableCat = withControls(Cat);
+import Cat from "./components/Cat";
+import Box from "./components/Box";
+import Fish from "./components/Fish";
+import Floor from "./components/Floor";
+import Scenario from "./components/Scenario";
+
+const withStateControl = compose(
+  connect("state", CatActions), // inject state and actions
+  withControls // inject controls
+);
+
+const StatefulCat = withStateControl(Cat);
 
 const App = () => (
   <Scenario>
-    <ControllableCat />
+    <Provider store={CatStore}>
+      <StatefulCat />
+    </Provider>
     <Floor>
       <Fish />
       <Box />
@@ -33,9 +43,4 @@ const App = () => (
   </Scenario>
 );
 
-render(
-  <Provider store={CatStore}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+render(<App />, document.getElementById("root"));

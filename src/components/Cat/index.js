@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import { connect } from "unistore/react";
 import * as CatStates from "../../states/CatStates";
 
 import "./index.css";
@@ -28,4 +27,4 @@ Cat.propTypes = {
   state: PropTypes.string.isRequired
 };
 
-export default connect("state")(Cat);
+export default Cat;

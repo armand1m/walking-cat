@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
-import { connect } from "unistore/react";
 
 import Button from "../components/Button";
-import actions from "../actions/CatActions";
 import * as CatStates from "../states/CatStates";
 
 const withLickingControl = WrappedComponent => {
-  const LickingControl = ({ state, lick, stop, ...props }) => {
-    const isLicking = state === CatStates.LICKING;
+  const LickingControl = ({ lick, stop, ...props }) => {
+    const isLicking = props.state === CatStates.LICKING;
     const onClick = isLicking ? stop : lick;
     const description = isLicking ? "Stop Licking" : "Start Licking";
 
@@ -23,7 +21,7 @@ const withLickingControl = WrappedComponent => {
     WrappedComponent.displayName
   })`;
 
-  return connect("state", actions)(LickingControl);
+  return LickingControl;
 };
 
 export default withLickingControl;

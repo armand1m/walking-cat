@@ -1,8 +1,5 @@
 import React, { Fragment } from "react";
-import { connect } from "unistore/react";
-
 import Button from "../components/Button";
-import actions from "../actions/CatActions";
 
 const withJumpingControl = WrappedComponent => {
   const JumpingControl = ({ jump, ...props }) => (
@@ -16,7 +13,7 @@ const withJumpingControl = WrappedComponent => {
     WrappedComponent.displayName
   })`;
 
-  return connect("state", actions)(JumpingControl);
+  return JumpingControl;
 };
 
 export default withJumpingControl;
